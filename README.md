@@ -18,3 +18,10 @@ https://emmauscollege.github.io/informatica/game/
 - icon <br>
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
+
+Game: family trouble
+- kamer maken
+- waiting room -> kamer 1
+- in kamer 1 een opdracht maken (kan meerkeuze zijn)
+- als je opdracht voldaan hebt dan kan je naar de volgende kamer gaan
+
