@@ -20,13 +20,13 @@ https://emmauscollege.github.io/informatica/game/
 - ...
 
 Game: family trouble
-- map design (tekening maken)
+- map & waiting room design (tekening maken)
 - een poppetje maken (als eerst een rondje)
 - poppetje laten bewegen (links, rechts, boven, beneden)
 - scherm volgt poppetje
 - vragen bedenken en antwoorden
-- poppetje 
-- waiting room -> kamer 1
+- poppetje klikt op * en krijgt de opdracht
+- waiting room (party joinen) -> play -> map in en kunnen spelen
 - in kamer 1 een opdracht maken (kan meerkeuze zijn)
-- als je opdracht voldaan hebt dan kan je naar de volgende kamer gaan
-
+- als je opdracht voldaan hebt dan krijg je iets (bijv sleutel)
+- je moet alles (bijv sleutels) verzamelen om te 'ontsnappen'
