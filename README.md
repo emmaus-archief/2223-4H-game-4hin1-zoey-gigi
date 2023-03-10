@@ -20,9 +20,12 @@ https://emmauscollege.github.io/informatica/game/
 - ...
 
 Game: family trouble
-- map design
+- map design (tekening maken)
 - een poppetje maken (als eerst een rondje)
-- vragen bedenken en antwoordem
+- poppetje laten bewegen (links, rechts, boven, beneden)
+- scherm volgt poppetje
+- vragen bedenken en antwoorden
+- poppetje 
 - waiting room -> kamer 1
 - in kamer 1 een opdracht maken (kan meerkeuze zijn)
 - als je opdracht voldaan hebt dan kan je naar de volgende kamer gaan
