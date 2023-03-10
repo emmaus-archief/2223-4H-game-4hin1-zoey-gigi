@@ -20,7 +20,9 @@ https://emmauscollege.github.io/informatica/game/
 - ...
 
 Game: family trouble
-- kamer maken
+- map design
+- een poppetje maken (als eerst een rondje)
+- vragen bedenken en antwoordem
 - waiting room -> kamer 1
 - in kamer 1 een opdracht maken (kan meerkeuze zijn)
 - als je opdracht voldaan hebt dan kan je naar de volgende kamer gaan
