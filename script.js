@@ -18,6 +18,7 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
+const KEY_LEFT = 378;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -115,4 +116,8 @@ function draw() {
     // teken game-over scherm
 
   }
+}
+
+if (keyIsDown(KEY_LEFT)) {
+  spelerX = spelerX -1;
 }
