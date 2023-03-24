@@ -18,7 +18,10 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
-const KEY_LEFT = 378;
+const LEFT_ARROW = 37;
+const RIGHT_ARROW = 39;
+const UP_ARROW = 38;
+const DOWN_ARROW = 40;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -33,7 +36,16 @@ var spelerY = 600; // y-positie van speler
 var beweegAlles = function() {
   // speler
 if (keyIsDown(RIGHT_ARROW)) {
-  spelerX = spelerX + 1;
+  spelerX = spelerX +1;
+}
+if (keyIsDown(LEFT_ARROW)) {
+  spelerX = spelerX -1;
+}
+  if (keyIsDown(UP_ARROW)) {
+  spelerY = spelerY -1;
+}
+  if (keyIsDown(DOWN_ARROW)) {
+  spelerY = spelerY +1;
 }
   // vijand
 
