@@ -19,14 +19,11 @@ https://emmauscollege.github.io/informatica/game/
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
 
-Game: family trouble
-- map & waiting room design (tekening maken)
-- een poppetje maken (als eerst een rondje)
+Game: Catscape
+- een poppetje maken (als eerst iets simpel)
 - poppetje laten bewegen (links, rechts, boven, beneden)
+- map & waiting room design (tekening maken)
 - scherm volgt poppetje
-- vragen bedenken en antwoorden
-- poppetje klikt op * en krijgt de opdracht
 - waiting room (party joinen) -> play -> map in en kunnen spelen
-- in kamer 1 een opdracht maken (kan meerkeuze zijn)
-- als je opdracht voldaan hebt dan krijg je iets (bijv sleutel)
+- spelers kunnen sleutels verzamelen
 - je moet alles (bijv sleutels) verzamelen om te 'ontsnappen'
