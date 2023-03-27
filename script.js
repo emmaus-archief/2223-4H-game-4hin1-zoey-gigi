@@ -36,17 +36,19 @@ var spelerY = 600; // y-positie van speler
 var beweegAlles = function() {
   // speler
 if (keyIsDown(RIGHT_ARROW)) {
-  spelerX = spelerX +1;
+  spelerX = spelerX +2;
 }
 if (keyIsDown(LEFT_ARROW)) {
-  spelerX = spelerX -1;
+  spelerX = spelerX -2;
 }
   if (keyIsDown(UP_ARROW)) {
-  spelerY = spelerY -1;
+  spelerY = spelerY -2;
 }
   if (keyIsDown(DOWN_ARROW)) {
-  spelerY = spelerY +1;
+  spelerY = spelerY +2;
 }
+
+
   // vijand
 
   // kogel
