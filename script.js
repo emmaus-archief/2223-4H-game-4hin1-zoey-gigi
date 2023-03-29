@@ -25,7 +25,13 @@ const DOWN_ARROW = 40;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+var speler2X = 600;
+var speler2Y = 600;
 
+var spelerSpringt = false;
+var springSnelheid = 0;
+var springSnelheidStart = 2;
+var zwaartekracht = 0.2;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -36,21 +42,40 @@ var spelerY = 600; // y-positie van speler
 var beweegAlles = function() {
   // speler
 if (keyIsDown(RIGHT_ARROW)) {
-  spelerX = spelerX +2;
+  spelerX = spelerX +3;
 }
 if (keyIsDown(LEFT_ARROW)) {
-  spelerX = spelerX -2;
+  spelerX = spelerX -3;
 }
-  if (keyIsDown(UP_ARROW)) {
-  spelerY = spelerY -2;
-}
-  if (keyIsDown(DOWN_ARROW)) {
-  spelerY = spelerY +2;
-}
-  // vijand
+
+  if (spelerSpringt === false &&
+     keyIsDown(UP_ARROW)) {
+    spelerSpringt = true;
+    springSnelheid = springSnelheidStart;
+  }
+
+  if (spelerSpringt === true) {
+    spelerY = spelerY - springSnelheid;
+    springSnelheid = springSnelheid - 0.2;
+  }
+  if (spelerY > 610) {
+    spelerSpringt = false;
+  }
+
+  // speler2
+  if (keyIsDown(68)) {
+    speler2X = speler2X +3;
+  }
+    if (keyIsDown(65)) {
+    speler2X = speler2X -3;
+  }
+    if (keyIsDown(87)) {
+    speler2Y = speler2Y -3;
+  }
+};
+  
 
   // kogel
-};
 
 /**
  * Checkt botsingen
@@ -82,6 +107,11 @@ var tekenAlles = function() {
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
+  //speler2
+  fill("black");
+  rect(speler2X -25, speler2Y -25, 50, 50);
+  fill("white");
+  ellipse(speler2X, speler2Y, 10, 10);
 
   // punten en health
 

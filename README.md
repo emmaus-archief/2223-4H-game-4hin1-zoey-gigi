@@ -20,10 +20,10 @@ https://emmauscollege.github.io/informatica/game/
 - ...
 
 Game: AnimalGo!
-- een poppetje maken (als eerst iets simpel)
-- poppetje laten bewegen (links, rechts, boven, beneden)
-- 2e poppetje maken
+[x]  een poppetje maken (als eerst iets simpel)
+[x]  tweede poppetje maken
+[x]  poppetje laten bewegen (links, rechts, boven, beneden)
+[x]  poppetje springen
 - map design (tekening maken)
-- scherm volgt poppetje
 - spelers kunnen iets verzamelen
 - je moet alles (bijv sleutels) verzamelen om te 'ontsnappen'
