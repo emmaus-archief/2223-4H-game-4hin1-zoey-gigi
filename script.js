@@ -29,8 +29,8 @@ var speler2X = 600;
 var speler2Y = 600;
 
 var spelerSpringt = false;
-var springSnelheid = 0;
-var springSnelheidStart = 2;
+var springSnelheid = 5;
+var springSnelheidStart = 5;
 var zwaartekracht = 0.2;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -58,7 +58,7 @@ if (keyIsDown(LEFT_ARROW)) {
     spelerY = spelerY - springSnelheid;
     springSnelheid = springSnelheid - 0.2;
   }
-  if (spelerY > 610) {
+  if (spelerY > 597) {
     spelerSpringt = false;
   }
 
