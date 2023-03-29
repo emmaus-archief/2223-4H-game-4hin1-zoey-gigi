@@ -19,11 +19,11 @@ https://emmauscollege.github.io/informatica/game/
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
 
-Game: Catscape
+Game: AnimalGo!
 - een poppetje maken (als eerst iets simpel)
 - poppetje laten bewegen (links, rechts, boven, beneden)
-- map & waiting room design (tekening maken)
+- 2e poppetje maken
+- map design (tekening maken)
 - scherm volgt poppetje
-- waiting room (party joinen) -> play -> map in en kunnen spelen
-- spelers kunnen sleutels verzamelen
+- spelers kunnen iets verzamelen
 - je moet alles (bijv sleutels) verzamelen om te 'ontsnappen'

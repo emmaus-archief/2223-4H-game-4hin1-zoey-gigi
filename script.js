@@ -47,8 +47,6 @@ if (keyIsDown(LEFT_ARROW)) {
   if (keyIsDown(DOWN_ARROW)) {
   spelerY = spelerY +2;
 }
-
-
   // vijand
 
   // kogel
@@ -74,7 +72,7 @@ var verwerkBotsing = function() {
 var tekenAlles = function() {
   // achtergrond
   fill ("skyblue");
-  rect(0, 0, 1650, 1650);
+  rect(0, 0, 1280, 720);
   // vijand
 
   // kogel
@@ -109,7 +107,7 @@ var checkGameOver = function() {
  */
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1650, 1650);
+  createCanvas(1280, 720);
 }
 
 
