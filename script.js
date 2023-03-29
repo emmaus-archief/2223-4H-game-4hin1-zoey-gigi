@@ -32,6 +32,12 @@ var spelerSpringt = false;
 var springSnelheid = 5;
 var springSnelheidStart = 5;
 var zwaartekracht = 0.2;
+
+var speler2Springt = false;
+var speler2springSnelheid = 5;
+var speler2springSnelheidStart = 5;
+var speler2zwaartekracht = 0.2;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -69,8 +75,20 @@ if (keyIsDown(LEFT_ARROW)) {
     if (keyIsDown(65)) {
     speler2X = speler2X -3;
   }
-    if (keyIsDown(87)) {
-    speler2Y = speler2Y -3;
+
+      if (speler2Springt === false &&
+     keyIsDown(87)) {
+    speler2Springt = true;
+    speler2springSnelheid = speler2springSnelheidStart;
+  }
+
+    if (speler2Springt === true) {
+    speler2Y = speler2Y - speler2springSnelheid;
+    speler2springSnelheid = speler2springSnelheid - 0.2;
+  }
+
+    if (speler2Y > 597) {
+    speler2Springt = false;
   }
 };
   
