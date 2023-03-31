@@ -127,16 +127,12 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+  image(img, spelerX-25, spelerY-225, 50, 50);
   //speler2
   fill("black");
   rect(speler2X -25, speler2Y -25, 50, 50);
   fill("white");
   ellipse(speler2X, speler2Y, 10, 10);
-  image(img, spelerX, spelerY, 50, 50);
 
   // punten en health
 
