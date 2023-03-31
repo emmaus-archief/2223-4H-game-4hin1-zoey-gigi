@@ -1,3 +1,10 @@
+
+function preload() {
+  img = loadImage('cat-left.png');
+}
+function setup() {
+  imag (img, 0, 0);
+}
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
@@ -23,7 +30,7 @@ const RIGHT_ARROW = 39;
 const UP_ARROW = 38;
 const DOWN_ARROW = 40;
 
-var spelerX = 1000; // x-positie van speler
+var spelerX = 1075; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var speler2X = 200;
 var speler2Y = 600;
@@ -129,6 +136,7 @@ var tekenAlles = function() {
   rect(speler2X -25, speler2Y -25, 50, 50);
   fill("white");
   ellipse(speler2X, speler2Y, 10, 10);
+  image(img, spelerX, spelerY, 50, 50);
 
   // punten en health
 
