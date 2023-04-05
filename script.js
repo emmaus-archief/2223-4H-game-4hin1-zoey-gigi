@@ -1,6 +1,6 @@
-
 function preload() {
-  img = loadImage('cat-left.png');
+  img = loadImage('purple-cat.png');
+  img2 = loadImage ('blue-bunny.png');
 }
 function setup() {
   imag (img, 0, 0);
@@ -127,12 +127,9 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(img, spelerX-25, spelerY-225, 50, 50);
+  image(img, spelerX-25, spelerY-20, 80, 130);
   //speler2
-  fill("black");
-  rect(speler2X -25, speler2Y -25, 50, 50);
-  fill("white");
-  ellipse(speler2X, speler2Y, 10, 10);
+  image(img2, speler2X -25, speler2Y -40, 100, 150);
 
   // punten en health
 
