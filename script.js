@@ -1,7 +1,7 @@
 
 function preload() {
-  img = loadImage('purple-cat.png');
-  img2 = loadImage('bunny-right.png');
+  img = loadImage('cat.png');
+  img2 = loadImage('bunny.png');
 }
 function setup() {
   image (img, 0, 0);
