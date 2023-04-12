@@ -1,9 +1,10 @@
+
 function preload() {
   img = loadImage('purple-cat.png');
-  img2 = loadImage ('blue-bunny.png');
+  img2 = loadImage('bunny-right.png');
 }
 function setup() {
-  imag (img, 0, 0);
+  image (img, 0, 0);
 }
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
@@ -120,17 +121,18 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
-  fill ("skyblue");
+  fill ("lightpink");
   rect(0, 0, 1280, 720);
-  // vijand
+  // platforms
 
+
+  
   // kogel
 
   // speler
-  image(img, spelerX-25, spelerY-20, 80, 130);
+  image(img, spelerX -20, spelerY -10, 70, 100);
   //speler2
-  image(img2, speler2X -25, speler2Y -40, 100, 150);
-
+  image(img2, speler2X -25, speler2Y -40, 80, 130);
   // punten en health
 
 };
@@ -157,8 +159,6 @@ function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 }
-
-
 
 /**
  * draw
