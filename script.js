@@ -123,8 +123,6 @@ var tekenAlles = function() {
   // achtergrond
   fill ("lightpink");
   rect(0, 0, 1280, 720);
-  // platforms
-
 
   
   // kogel
