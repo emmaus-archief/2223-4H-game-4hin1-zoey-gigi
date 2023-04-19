@@ -1,11 +1,3 @@
-
-function preload() {
-  img = loadImage('cat.png');
-  img2 = loadImage('bunny.png');
-}
-function setup() {
-  image (img, 0, 0);
-}
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
@@ -23,6 +15,10 @@ function setup() {
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
+
+var imgP1;
+var imgP2;
+
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
@@ -42,9 +38,9 @@ var springSnelheidStart = 5;
 var zwaartekracht = 0.2;
 
 var speler2Springt = false;
-var speler2springSnelheid = 5;
-var speler2springSnelheidStart = 5;
-var speler2zwaartekracht = 0.2;
+var speler2SpringSnelheid = 5;
+var speler2SpringSnelheidStart = 5;
+var speler2Zwaartekracht = 0.2;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -87,12 +83,12 @@ if (keyIsDown(LEFT_ARROW)) {
       if (speler2Springt === false &&
      keyIsDown(87)) {
     speler2Springt = true;
-    speler2springSnelheid = speler2springSnelheidStart;
+    speler2SpringSnelheid = speler2SpringSnelheidStart;
   }
 
     if (speler2Springt === true) {
-    speler2Y = speler2Y - speler2springSnelheid;
-    speler2springSnelheid = speler2springSnelheid - 0.2;
+    speler2Y = speler2Y - speler2SpringSnelheid;
+    speler2SpringSnelheid = speler2SpringSnelheid - 0.2;
   }
 
     if (speler2Y > 597) {
@@ -128,9 +124,9 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(img, spelerX -20, spelerY -10, 70, 100);
+  image(imgP1, spelerX -20, spelerY -10, 70, 100);
   //speler2
-  image(img2, speler2X -25, speler2Y -40, 80, 130);
+  image(imgP2, speler2X -25, speler2Y -40, 80, 130);
   // punten en health
 
 };
@@ -147,7 +143,10 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload() {
+  imgP1 = loadImage('cat-left.png');
+  imgP2 = loadImage('bunny-left.png');
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
