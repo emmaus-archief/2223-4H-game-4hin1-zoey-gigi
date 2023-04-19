@@ -16,6 +16,8 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
+// test
+
 var imgP1;
 var imgP2;
 
