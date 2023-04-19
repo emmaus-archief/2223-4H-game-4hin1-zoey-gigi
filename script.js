@@ -16,7 +16,6 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
-// test
 
 var imgP1;
 var imgP2;
@@ -147,7 +146,7 @@ var checkGameOver = function() {
 /* ********************************************* */
 function preload() {
   imgP1 = loadImage('cat-left.png');
-  imgP2 = loadImage('bunny-left.png');
+  imgP2 = loadImage('bunny-right.png');
 }
 /**
  * setup
