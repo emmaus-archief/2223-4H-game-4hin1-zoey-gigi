@@ -34,6 +34,9 @@ var spelerY = 600; // y-positie van speler
 var speler2X = 200;
 var speler2Y = 600;
 
+var valkuilX = 650;
+var valkuilY = 665;
+  
 var spelerSpringt = false;
 var springSnelheid = 5;
 var springSnelheidStart = 5;
@@ -107,7 +110,12 @@ if (keyIsDown(LEFT_ARROW)) {
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-
+if (spelerX - valkuilX < 50 &&
+   spelerX - valkuilX < 50 &&
+   spelerY - valkuilY < 50 &&
+   spelerY - valkuilY < 50) {
+   console.log("Botsing");
+   }
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -129,6 +137,9 @@ var tekenAlles = function() {
   image(imgP1, spelerX -20, spelerY -10, 70, 100);
   //speler2
   image(imgP2, speler2X -25, speler2Y -40, 80, 130);
+  //valkuil
+  fill ("red");
+  rect (valkuilX - 25, valkuilY -25, 50, 50);
   // punten en health
 
 };
