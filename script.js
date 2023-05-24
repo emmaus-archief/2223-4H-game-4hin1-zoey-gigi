@@ -134,9 +134,9 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(imgP1, spelerX -20, spelerY -10, 70, 100);
+  image(imgP1, spelerX -20, spelerY -80, 350, 350);
   //speler2
-  image(imgP2, speler2X -25, speler2Y -40, 80, 130);
+  image(imgP2, speler2X -25, speler2Y -80, 350, 350);
   //valkuil
   fill ("red");
   rect (valkuilX - 25, valkuilY -25, 50, 50);
@@ -157,8 +157,8 @@ var checkGameOver = function() {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-  imgP1 = loadImage('cat-left.png');
-  imgP2 = loadImage('bunny-right.png');
+  imgP1 = loadImage('cat.png');
+  imgP2 = loadImage('bunny.png');
 }
 /**
  * setup
