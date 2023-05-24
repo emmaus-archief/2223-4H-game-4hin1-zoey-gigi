@@ -16,13 +16,15 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+var aantal = 0;
 
 var imgP1;
 var imgP2;
+var imgGameover;
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const UITLEG = 8;
 var spelStatus = SPELEN;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
@@ -114,7 +116,8 @@ if (spelerX - valkuilX < 50 &&
    spelerX - valkuilX < 50 &&
    spelerY - valkuilY < 50 &&
    spelerY - valkuilY < 50) {
-   console.log("Botsing");
+   aantal = aantal + 1
+   console.log("Botsing" + aantal);
    }
   // botsing kogel tegen vijand
 
@@ -134,9 +137,9 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(imgP1, spelerX -20, spelerY -80, 350, 350);
+  image(imgP1, spelerX -20, spelerY -10, 70, 100);
   //speler2
-  image(imgP2, speler2X -25, speler2Y -80, 350, 350);
+  image(imgP2, speler2X -25, speler2Y -40, 80, 130);
   //valkuil
   fill ("red");
   rect (valkuilX - 25, valkuilY -25, 50, 50);
@@ -157,8 +160,9 @@ var checkGameOver = function() {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-  imgP1 = loadImage('cat.png');
-  imgP2 = loadImage('bunny.png');
+  imgP1 = loadImage('cat-left.png');
+  imgP2 = loadImage('bunny-right.png');
+  imgGameover = loadImage('game-over.png');
 }
 /**
  * setup
@@ -176,7 +180,7 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  if (spelStatus === SPELEN) {
+  if (spelStatus === 1) {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
@@ -186,5 +190,11 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
+    console.log("game over");
+    image(imgGameover, 100, 100);
+  }
+  if (spelStatus === UITLEG) {
+    console.log("uitleg");
   }
 }
+
