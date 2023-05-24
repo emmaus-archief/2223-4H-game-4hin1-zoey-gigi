@@ -120,7 +120,13 @@ if (spelerX - valkuilX < 50 &&
    console.log("Botsing" + aantal);
    }
   // botsing kogel tegen vijand
-
+if (speler2X - valkuilX < -120 &&
+   speler2X - valkuilX < -120 &&
+   speler2Y - valkuilY < -120 &&
+   speler2Y - valkuilY < -120) {
+   aantal = aantal + 1
+   console.log("Botsing" + aantal);
+   }
   // update punten en health
 
 };
