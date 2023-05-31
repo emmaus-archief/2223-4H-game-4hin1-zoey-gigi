@@ -140,23 +140,20 @@ var tekenAlles = function() {
   // achtergrond
   fill ("lightpink");
   rect(0, 0, 1280, 720);
-
-  
-  // kogel
-
   // speler
   image(imgP1, spelerX -20, spelerY, 60, 80);
   fill("black");
   ellipse(spelerX,spelerY, 10, 10);
   //speler2
-  image(imgP2, speler2X -25, speler2Y -80, 350, 350);
+  image(imgP2, speler2X -25, speler2Y, 70, 90);
   //valkuil
   fill ("red");
   rect (valkuilX - 25, valkuilY -25, 50, 50);
     fill("yellow");
   ellipse(valkuilX,valkuilY,10,10);
   // punten en health
-
+  fill("yellow");
+  text('health');
 };
 
 /**
@@ -206,7 +203,7 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
     console.log("game over");
-    image(imgGameover, 140, 20, 900, 900);
+    image(imgGameover, 280, 20, 700, 600);
   }
   if (spelStatus === UITLEG) {
     console.log("uitleg");
