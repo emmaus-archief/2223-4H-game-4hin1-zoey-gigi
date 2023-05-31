@@ -145,9 +145,9 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(imgP1, spelerX -20, spelerY -80, 350, 350);
+  image(imgP1, spelerX -20, spelerY, 60, 80);
   fill("black");
-  ellipse(spelerX,spelerY,10,10);
+  ellipse(spelerX,spelerY, 10, 10);
   //speler2
   image(imgP2, speler2X -25, speler2Y -80, 350, 350);
   //valkuil
