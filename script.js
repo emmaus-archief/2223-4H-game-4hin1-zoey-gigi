@@ -35,9 +35,10 @@ var spelerX = 1075; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var speler2X = 200;
 var speler2Y = 600;
+var health = 50;
 
 var valkuilX = 650;
-var valkuilY = 665;
+var valkuilY = 605;
   
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -113,11 +114,12 @@ if (keyIsDown(LEFT_ARROW)) {
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
 if (spelerX - valkuilX < 50 &&
-   spelerX - valkuilX < 50 &&
+   spelerX - valkuilX > -50 &&
    spelerY - valkuilY < 50 &&
-   spelerY - valkuilY < 50) {
+   spelerY - valkuilY > -50) {
    aantal = aantal + 1
-   console.log("Botsing" + aantal);
+   console.log("Botsing1 " + aantal);
+  health = health - 1;
    }
   // botsing kogel tegen vijand
 if (speler2X - valkuilX < -120 &&
@@ -125,7 +127,7 @@ if (speler2X - valkuilX < -120 &&
    speler2Y - valkuilY < -120 &&
    speler2Y - valkuilY < -120) {
    aantal = aantal + 1
-   console.log("Botsing" + aantal);
+   console.log("Botsing2 " + aantal);
    }
   // update punten en health
 
@@ -144,11 +146,15 @@ var tekenAlles = function() {
 
   // speler
   image(imgP1, spelerX -20, spelerY -80, 350, 350);
+  fill("black");
+  ellipse(spelerX,spelerY,10,10);
   //speler2
   image(imgP2, speler2X -25, speler2Y -80, 350, 350);
   //valkuil
   fill ("red");
   rect (valkuilX - 25, valkuilY -25, 50, 50);
+    fill("yellow");
+  ellipse(valkuilX,valkuilY,10,10);
   // punten en health
 
 };
@@ -159,6 +165,9 @@ var tekenAlles = function() {
  */
 var checkGameOver = function() {
   // check of HP 0 is , of tijd op is, of ...
+  if (health <=0) {
+    return true;
+  }
   return false;
 };
 
@@ -197,7 +206,7 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
     console.log("game over");
-    image(imgGameover, 100, 100);
+    image(imgGameover, 140, 20, 900, 900);
   }
   if (spelStatus === UITLEG) {
     console.log("uitleg");
