@@ -110,19 +110,19 @@ if (keyIsDown(LEFT_ARROW)) {
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-if (spelerX - valkuilX < 50 &&
-   spelerX - valkuilX > -50 &&
-   spelerY - valkuilY < 50 &&
-   spelerY - valkuilY > -50) {
+if (spelerX - valkuilX < 40 &&
+   spelerX - valkuilX > -40 &&
+   spelerY - valkuilY < 40 &&
+   spelerY - valkuilY > -40) {
    aantal = aantal + 1
    console.log("Botsing1 " + aantal);
   health = health - 1;
    }
   // botsing kogel tegen vijand
-if (speler2X - valkuilX < 50 &&
-   speler2X - valkuilX > -50 &&
-   speler2Y - valkuilY < 50 &&
-   speler2Y - valkuilY > -50) {
+if (speler2X - valkuilX < 40 &&
+   speler2X - valkuilX > -40 &&
+   speler2Y - valkuilY < 40 &&
+   speler2Y - valkuilY > -40) {
    aantal = aantal + 1
    console.log("Botsing2 " + aantal);
   health = health - 1;
