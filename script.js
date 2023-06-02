@@ -22,6 +22,7 @@ var imgP1;
 var imgP2;
 var imgGameover;
 var imgcloud;
+var imglongcloud;
 
 const SPELEN = 1;
 const GAMEOVER = 2;
@@ -46,6 +47,11 @@ var platformY = 660;
 var platformHoogte = 15;
 var platformBreedte = 90;
 
+var platform2X = 230;
+var platform2Y = 600;
+var platform2Hoogte = 15;
+var platform2Breedte = 90;
+
 var spelerSpringt = false;
 var springSnelheid = 5;
 var springSnelheidStart = 5;
@@ -59,6 +65,22 @@ var speler2Zwaartekracht = 0.2;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
+function preload() {
+  imgP1 = loadImage('bunny.png');
+  imgP2 = loadImage('cat.png');
+  imgGameover = loadImage('game-over.png');
+  imgcloud = loadImage('smallcloud.png');
+  imglongcloud = loadImage('longcloud.png');
+}
+/**
+ * setup
+ * de code in deze functie wordt één keer uitgevoerd door
+ * de p5 library, zodra het spel geladen is in de browser
+ */
+function setup() {
+  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
+  createCanvas(1280, 720);
+}
 
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
@@ -73,6 +95,11 @@ if (keyIsDown(LEFT_ARROW)) {
 }
 if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && spelerX >= platformX && spelerX <= platformX + platformBreedte) {
   spelerY = platformY - 10;
+  spelerSpringt = false;
+}
+
+  if (spelerY + 10 >= platform2Y && spelerY + 10 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
+  spelerY = platform2Y - 10;
   spelerSpringt = false;
 }
   
@@ -169,6 +196,10 @@ var tekenAlles = function() {
   image(imgcloud, platformX -96, platformY -182, 400, 400);
   fill("black");
   rect (platformX, platformY, 90, 15);
+  //platform2
+  image(imglongcloud, platform2X - 130, platform2Y -182, 400, 400); 
+  fill("black");
+  rect (platform2X, platform2Y, 150, 15);
 };
 
 /**
@@ -186,21 +217,6 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-function preload() {
-  imgP1 = loadImage('bunny.png');
-  imgP2 = loadImage('cat.png');
-  imgGameover = loadImage('game-over.png');
-  imgcloud = loadImage('smallcloud.png');
-}
-/**
- * setup
- * de code in deze functie wordt één keer uitgevoerd door
- * de p5 library, zodra het spel geladen is in de browser
- */
-function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
-}
 
 /**
  * draw
