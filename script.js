@@ -207,6 +207,11 @@ function draw() {
     // teken game-over scherm
     console.log("game over");
     image(imgGameover, 280, 20, 700, 600);
+    if (keyIsDown(32)) {
+      spelerX = 1075;
+      speler2X = 200;
+      spelStatus = SPELEN;
+    }
   }
   if (spelStatus === UITLEG) {
     console.log("uitleg");
