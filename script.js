@@ -76,7 +76,7 @@ if (keyIsDown(LEFT_ARROW)) {
     spelerY = spelerY - springSnelheid;
     springSnelheid = springSnelheid - 0.2;
   }
-  if (spelerY > 597) {
+  if (spelerY > 690) {
     spelerSpringt = false;
   }
 
@@ -99,7 +99,7 @@ if (keyIsDown(LEFT_ARROW)) {
     speler2SpringSnelheid = speler2SpringSnelheid - 0.2;
   }
 
-    if (speler2Y > 597) {
+    if (speler2Y > 690) {
     speler2Springt = false;
   }
 };
@@ -146,9 +146,9 @@ var tekenAlles = function() {
   ellipse(spelerX,spelerY, 10, 10);
   //valkuil
   fill ("red");
-  rect (valkuilX - 25, valkuilY -20, 50, 20);
+  rect (valkuilX - 14, valkuilY -10, 28, 20);
     fill("yellow");
-  ellipse(valkuilX,valkuilY,10,10);
+  ellipse(valkuilX ,valkuilY ,10,10);
   // punten en health
 };
 
