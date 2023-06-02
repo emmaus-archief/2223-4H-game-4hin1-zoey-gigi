@@ -21,6 +21,7 @@ var aantal = 0;
 var imgP1;
 var imgP2;
 var imgGameover;
+var imgcloud;
 
 const SPELEN = 1;
 const GAMEOVER = 2;
@@ -37,9 +38,12 @@ var speler2X = 200;
 var speler2Y = 700;
 var health = 50;
 
-var valkuilX = 650;
+var valkuilX = 325;
 var valkuilY = 700;
-  
+
+var platformX = 460;
+var platformY = 660;
+
 var spelerSpringt = false;
 var springSnelheid = 5;
 var springSnelheidStart = 5;
@@ -150,6 +154,10 @@ var tekenAlles = function() {
     fill("yellow");
   ellipse(valkuilX ,valkuilY ,10,10);
   // punten en health
+  //platform
+  image(imgcloud, platformX -96, platformY -182, 400, 400);
+  fill("black");
+  rect (platformX, platformY, 90, 15);
 };
 
 /**
@@ -171,6 +179,7 @@ function preload() {
   imgP1 = loadImage('bunny.png');
   imgP2 = loadImage('cat.png');
   imgGameover = loadImage('game-over.png');
+  imgcloud = loadImage('cloud.png');
 }
 /**
  * setup
