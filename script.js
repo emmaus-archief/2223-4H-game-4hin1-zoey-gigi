@@ -122,12 +122,13 @@ if (spelerX - valkuilX < 50 &&
   health = health - 1;
    }
   // botsing kogel tegen vijand
-if (speler2X - valkuilX < -120 &&
-   speler2X - valkuilX < -120 &&
-   speler2Y - valkuilY < -120 &&
-   speler2Y - valkuilY < -120) {
+if (speler2X - valkuilX < 50 &&
+   speler2X - valkuilX > -50 &&
+   speler2Y - valkuilY < 50 &&
+   speler2Y - valkuilY > -50) {
    aantal = aantal + 1
    console.log("Botsing2 " + aantal);
+  health = health - 1;
    }
   // update punten en health
 
@@ -146,6 +147,8 @@ var tekenAlles = function() {
   ellipse(spelerX,spelerY, 10, 10);
   //speler2
   image(imgP2, speler2X -25, speler2Y, 70, 90);
+  fill("black");
+  ellipse(speler2X,speler2Y, 10, 10);
   //valkuil
   fill ("red");
   rect (valkuilX - 25, valkuilY -25, 50, 50);
