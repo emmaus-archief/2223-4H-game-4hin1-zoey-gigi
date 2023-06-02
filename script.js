@@ -43,6 +43,8 @@ var valkuilY = 700;
 
 var platformX = 460;
 var platformY = 660;
+var platformHoogte = 15;
+var platformBreedte = 90;
 
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -69,7 +71,11 @@ if (keyIsDown(RIGHT_ARROW)) {
 if (keyIsDown(LEFT_ARROW)) {
   spelerX = spelerX -3;
 }
-
+if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && spelerX >= platformX && spelerX <= platformX + platformBreedte) {
+  spelerY = platformY - 10;
+  spelerSpringt = false;
+}
+  
   if (spelerSpringt === false &&
      keyIsDown(UP_ARROW)) {
     spelerSpringt = true;
@@ -92,6 +98,11 @@ if (keyIsDown(LEFT_ARROW)) {
     speler2X = speler2X -3;
   }
 
+if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte && speler2X >= platformX && speler2X <= platformX + platformBreedte) {
+  speler2Y = platformY - 10;
+  speler2Springt = false;
+}
+  
       if (speler2Springt === false &&
      keyIsDown(87)) {
     speler2Springt = true;
@@ -179,7 +190,7 @@ function preload() {
   imgP1 = loadImage('bunny.png');
   imgP2 = loadImage('cat.png');
   imgGameover = loadImage('game-over.png');
-  imgcloud = loadImage('cloud.png');
+  imgcloud = loadImage('smallcloud.png');
 }
 /**
  * setup
