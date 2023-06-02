@@ -32,13 +32,13 @@ const UP_ARROW = 38;
 const DOWN_ARROW = 40;
 
 var spelerX = 1075; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerY = 700; // y-positie van speler
 var speler2X = 200;
-var speler2Y = 600;
+var speler2Y = 700;
 var health = 50;
 
 var valkuilX = 650;
-var valkuilY = 605;
+var valkuilY = 700;
   
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -103,9 +103,6 @@ if (keyIsDown(LEFT_ARROW)) {
     speler2Springt = false;
   }
 };
-  
-
-
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten dingen
@@ -134,29 +131,25 @@ if (speler2X - valkuilX < 50 &&
 
 };
 
-/**
- * Tekent spelscherm
- */
+ // Tekent spelscherm
 var tekenAlles = function() {
   // achtergrond
   fill ("lightpink");
   rect(0, 0, 1280, 720);
-  // speler
-  image(imgP1, spelerX -20, spelerY, 60, 80);
-  fill("black");
-  ellipse(spelerX,spelerY, 10, 10);
-  //speler2
-  image(imgP2, speler2X -25, speler2Y, 70, 90);
+  // speler 1
+  image(imgP1, speler2X -35, speler2Y -80, 70, 90);
   fill("black");
   ellipse(speler2X,speler2Y, 10, 10);
+  //speler 2
+  image(imgP2, spelerX -30, spelerY -75, 60, 80);
+  fill("black");
+  ellipse(spelerX,spelerY, 10, 10);
   //valkuil
   fill ("red");
-  rect (valkuilX - 25, valkuilY -25, 50, 50);
+  rect (valkuilX - 25, valkuilY -20, 50, 20);
     fill("yellow");
   ellipse(valkuilX,valkuilY,10,10);
   // punten en health
-  fill("yellow");
-  text('health');
 };
 
 /**
@@ -175,8 +168,8 @@ var checkGameOver = function() {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-  imgP1 = loadImage('cat.png');
-  imgP2 = loadImage('bunny.png');
+  imgP1 = loadImage('bunny.png');
+  imgP2 = loadImage('cat.png');
   imgGameover = loadImage('game-over.png');
 }
 /**
