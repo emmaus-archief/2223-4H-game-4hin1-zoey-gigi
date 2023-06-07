@@ -47,10 +47,15 @@ var platformY = 660;
 var platformHoogte = 15;
 var platformBreedte = 90;
 
-var platform2X = 230;
+var platform2X = 600;
 var platform2Y = 600;
 var platform2Hoogte = 15;
 var platform2Breedte = 150;
+
+var platform3X = 740;
+var platform3Y = 660;
+var platform3Hoogte = 15;
+var platform3Breedte = 90;
 
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -205,6 +210,10 @@ var tekenAlles = function() {
   image(imglongcloud, platform2X - 130, platform2Y - 182, 400, 400);
   fill("black");
   rect(platform2X, platform2Y, platform2Breedte, 15);
+  //platform3
+  image(imgcloud2, platformX - 96, platformY - 182, 400, 400);
+  fill("black");
+  rect(platformX, platformY, platformBreedte, 15);
 };
 
 /**
