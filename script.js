@@ -146,6 +146,12 @@ var beweegAlles = function() {
     speler2Y = platform2Y - 5;
     speler2Springt = false;
   }
+
+  if (speler2Y + 1 >= platform3Y && speler2Y + 1 <= platform3Y + platform3Hoogte && speler2X >= platform3X && speler2X <= platform3X + platform3Breedte) {
+    speler2Y = platform3Y - 5;
+    speler2Springt = false;
+  }
+  
   if (speler2Springt === false &&
     keyIsDown(87)) {
     speler2Springt = true;
