@@ -176,8 +176,8 @@ var verwerkBotsing = function() {
   // botsing speler tegen vijand
   if (spelerX - valkuilX < 40 &&
     spelerX - valkuilX > -40 &&
-    spelerY - valkuilY < 40 &&
-    spelerY - valkuilY > -40) {
+    spelerY - valkuilY < 90 &&
+    spelerY - valkuilY > -90) {
     aantal = aantal + 1
     console.log("Botsing1 " + aantal);
     health = health - 1;
@@ -185,8 +185,8 @@ var verwerkBotsing = function() {
   // botsing kogel tegen vijand
   if (speler2X - valkuilX < 40 &&
     speler2X - valkuilX > -40 &&
-    speler2Y - valkuilY < 40 &&
-    speler2Y - valkuilY > -40) {
+    speler2Y - valkuilY < 90 &&
+    speler2Y - valkuilY > -90) {
     aantal = aantal + 1
     console.log("Botsing2 " + aantal);
     health = health - 1;
