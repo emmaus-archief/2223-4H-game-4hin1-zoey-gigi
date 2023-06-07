@@ -35,12 +35,12 @@ const DOWN_ARROW = 40;
 
 var spelerX = 1075; // x-positie van speler
 var spelerY = 700; // y-positie van speler
-var speler2X = 200;
-var speler2Y = 700;
+var speler2X = 200; // x-positie van speler2
+var speler2Y = 700; // y-positie van speler2
 var health = 50;
 
-var valkuilX = 325;
-var valkuilY = 700;
+var valkuilX = 660;
+var valkuilY = 635;
 
 var platformX = 380;
 var platformY = 660;
@@ -210,7 +210,7 @@ var tekenAlles = function() {
   ellipse(spelerX, spelerY, 10, 10);
   //valkuil
   fill("red");
-  rect(valkuilX - 14, valkuilY - 10, 28, 20);
+  rect(valkuilX - 14, valkuilY - 10, 28, 100);
   fill("yellow");
   ellipse(valkuilX, valkuilY, 10, 10);
   // punten en health
