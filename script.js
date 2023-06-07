@@ -42,17 +42,17 @@ var health = 50;
 var valkuilX = 325;
 var valkuilY = 700;
 
-var platformX = 460;
+var platformX = 380;
 var platformY = 660;
 var platformHoogte = 15;
 var platformBreedte = 90;
 
-var platform2X = 600;
+var platform2X = 580;
 var platform2Y = 600;
 var platform2Hoogte = 15;
 var platform2Breedte = 150;
 
-var platform3X = 740;
+var platform3X = 840;
 var platform3Y = 660;
 var platform3Hoogte = 15;
 var platform3Breedte = 90;
@@ -106,6 +106,12 @@ var beweegAlles = function() {
   // speler landt op platform 2
   if (spelerY + 1 >= platform2Y && spelerY + 1 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
     spelerY = platform2Y - 5;
+    spelerSpringt = false;
+  }
+
+    // speler landt op platform 3
+  if (spelerY + 10 >= platform3Y && spelerY + 10 <= platform3Y + platform3Hoogte && spelerX >= platform3X && spelerX <= platform3X + platform3Breedte) {
+    spelerY = platform3Y - 5;
     spelerSpringt = false;
   }
 
