@@ -67,12 +67,12 @@ var platform5Y = 530;
 var platform5Hoogte = 15;
 var platform5Breedte = 150;
 
-var platform6X = 185;
+var platform6X = 140;
 var platform6Y = 600;
 var platform6Hoogte = 15;
 var platform6Breedte = 150;
 
-var platform7X = 1215;
+var platform7X = 1050;
 var platform7Y = 600;
 var platform7Hoogte = 15;
 var platform7Breedte = 150;
@@ -147,6 +147,18 @@ var beweegAlles = function() {
     spelerSpringt = false;
   }
 
+        // speler landt op platform 6
+  if (spelerY + 1 >= platform6Y && spelerY + 10 <= platform6Y + platform6Hoogte && spelerX >= platform6X && spelerX <= platform6X + platform6Breedte) {
+    spelerY = platform6Y - 5;
+    spelerSpringt = false;
+  }
+
+          // speler landt op platform 7
+  if (spelerY + 1 >= platform7Y && spelerY + 10 <= platform7Y + platform7Hoogte && spelerX >= platform7X && spelerX <= platform7X + platform7Breedte) {
+    spelerY = platform7Y - 5;
+    spelerSpringt = false;
+  }
+
   if (spelerSpringt === false &&
     keyIsDown(UP_ARROW)) {
     spelerSpringt = true;
@@ -192,6 +204,18 @@ var beweegAlles = function() {
   //speler2 landt op platform 5
     if (speler2Y + 1 >= platform5Y && speler2Y + 1 <= platform5Y + platform5Hoogte && speler2X >= platform5X && speler2X <= platform5X + platform5Breedte) {
     speler2Y = platform5Y - 5;
+    speler2Springt = false;
+  }
+
+    //speler2 landt op platform 6
+    if (speler2Y + 1 >= platform6Y && speler2Y + 1 <= platform6Y + platform6Hoogte && speler2X >= platform6X && speler2X <= platform6X + platform6Breedte) {
+    speler2Y = platform6Y - 5;
+    speler2Springt = false;
+  }
+
+      //speler2 landt op platform 7
+    if (speler2Y + 1 >= platform7Y && speler2Y + 1 <= platform7Y + platform7Hoogte && speler2X >= platform7X && speler2X <= platform7X + platform7Breedte) {
+    speler2Y = platform7Y - 5;
     speler2Springt = false;
   }
   
