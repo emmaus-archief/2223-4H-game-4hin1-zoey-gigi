@@ -211,9 +211,9 @@ var tekenAlles = function() {
   fill("black");
   rect(platform2X, platform2Y, platform2Breedte, 15);
   //platform3
-  image(imgcloud2, platformX - 96, platformY - 182, 400, 400);
+  image(imgcloud, platform3X - 96, platform3Y - 182, 400, 400);
   fill("black");
-  rect(platformX, platformY, platformBreedte, 15);
+  rect(platform3X, platform3Y, platform3Breedte, 15);
 };
 
 /**
