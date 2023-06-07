@@ -50,7 +50,7 @@ var platformBreedte = 90;
 var platform2X = 230;
 var platform2Y = 600;
 var platform2Hoogte = 15;
-var platform2Breedte = 90;
+var platform2Breedte = 150;
 
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -86,25 +86,26 @@ function setup() {
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function() {
-  // speler
-if (keyIsDown(RIGHT_ARROW)) {
-  spelerX = spelerX +3;
-}
-if (keyIsDown(LEFT_ARROW)) {
-  spelerX = spelerX -3;
-}
-if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && spelerX >= platformX && spelerX <= platformX + platformBreedte) {
-  spelerY = platformY - 10;
-  spelerSpringt = false;
-}
-
+  // speler naar linsk of rechts
+  if (keyIsDown(RIGHT_ARROW)) {
+    spelerX = spelerX + 3;
+  }
+  if (keyIsDown(LEFT_ARROW)) {
+    spelerX = spelerX - 3;
+  }
+  // speler landt op platform 1
+  if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && spelerX >= platformX && spelerX <= platformX + platformBreedte) {
+    spelerY = platformY - 10;
+    spelerSpringt = false;
+  }
+  // speler landt op platform 2
   if (spelerY + 1 >= platform2Y && spelerY + 1 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
-  spelerY = platform2Y - 5;
-  spelerSpringt = false;
-}
-  
+    spelerY = platform2Y - 5;
+    spelerSpringt = false;
+  }
+
   if (spelerSpringt === false &&
-     keyIsDown(UP_ARROW)) {
+    keyIsDown(UP_ARROW)) {
     spelerSpringt = true;
     springSnelheid = springSnelheidStart;
   }
@@ -119,33 +120,33 @@ if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && s
 
   // speler2
   if (keyIsDown(68)) {
-    speler2X = speler2X +3;
+    speler2X = speler2X + 3;
   }
-    if (keyIsDown(65)) {
-    speler2X = speler2X -3;
+  if (keyIsDown(65)) {
+    speler2X = speler2X - 3;
   }
 
-if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte && speler2X >= platformX && speler2X <= platformX + platformBreedte) {
-  speler2Y = platformY - 10;
-  speler2Springt = false;
-}
+  if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte && speler2X >= platformX && speler2X <= platformX + platformBreedte) {
+    speler2Y = platformY - 10;
+    speler2Springt = false;
+  }
 
- if (speler2Y + 1 >= platform2Y && speler2Y + 1 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
-  speler2Y = platform2Y - 5;
-  speler2Springt = false;
-} 
-      if (speler2Springt === false &&
-     keyIsDown(87)) {
+  if (speler2Y + 1 >= platform2Y && speler2Y + 1 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
+    speler2Y = platform2Y - 5;
+    speler2Springt = false;
+  }
+  if (speler2Springt === false &&
+    keyIsDown(87)) {
     speler2Springt = true;
     speler2SpringSnelheid = speler2SpringSnelheidStart;
   }
 
-    if (speler2Springt === true) {
+  if (speler2Springt === true) {
     speler2Y = speler2Y - speler2SpringSnelheid;
     speler2SpringSnelheid = speler2SpringSnelheid - 0.2;
   }
 
-    if (speler2Y > 690) {
+  if (speler2Y > 690) {
     speler2Springt = false;
   }
 };
@@ -156,54 +157,54 @@ if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte &&
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-if (spelerX - valkuilX < 40 &&
-   spelerX - valkuilX > -40 &&
-   spelerY - valkuilY < 40 &&
-   spelerY - valkuilY > -40) {
-   aantal = aantal + 1
-   console.log("Botsing1 " + aantal);
-  health = health - 1;
-   }
+  if (spelerX - valkuilX < 40 &&
+    spelerX - valkuilX > -40 &&
+    spelerY - valkuilY < 40 &&
+    spelerY - valkuilY > -40) {
+    aantal = aantal + 1
+    console.log("Botsing1 " + aantal);
+    health = health - 1;
+  }
   // botsing kogel tegen vijand
-if (speler2X - valkuilX < 40 &&
-   speler2X - valkuilX > -40 &&
-   speler2Y - valkuilY < 40 &&
-   speler2Y - valkuilY > -40) {
-   aantal = aantal + 1
-   console.log("Botsing2 " + aantal);
-  health = health - 1;
-   }
+  if (speler2X - valkuilX < 40 &&
+    speler2X - valkuilX > -40 &&
+    speler2Y - valkuilY < 40 &&
+    speler2Y - valkuilY > -40) {
+    aantal = aantal + 1
+    console.log("Botsing2 " + aantal);
+    health = health - 1;
+  }
   // update punten en health
 
 };
 
- // Tekent spelscherm
+// Tekent spelscherm
 var tekenAlles = function() {
   // achtergrond
-  fill ("lightpink");
+  fill("lightpink");
   rect(0, 0, 1280, 720);
   // speler 1
-  image(imgP1, speler2X -35, speler2Y -80, 70, 90);
+  image(imgP1, speler2X - 35, speler2Y - 80, 70, 90);
   fill("black");
-  ellipse(speler2X,speler2Y, 10, 10);
+  ellipse(speler2X, speler2Y, 10, 10);
   //speler 2
-  image(imgP2, spelerX -30, spelerY -75, 60, 80);
+  image(imgP2, spelerX - 30, spelerY - 75, 60, 80);
   fill("black");
-  ellipse(spelerX,spelerY, 10, 10);
+  ellipse(spelerX, spelerY, 10, 10);
   //valkuil
-  fill ("red");
-  rect (valkuilX - 14, valkuilY -10, 28, 20);
-    fill("yellow");
-  ellipse(valkuilX ,valkuilY ,10,10);
+  fill("red");
+  rect(valkuilX - 14, valkuilY - 10, 28, 20);
+  fill("yellow");
+  ellipse(valkuilX, valkuilY, 10, 10);
   // punten en health
   //platform
-  image(imgcloud, platformX -96, platformY -182, 400, 400);
+  image(imgcloud, platformX - 96, platformY - 182, 400, 400);
   fill("black");
-  rect (platformX, platformY, 90, 15);
+  rect(platformX, platformY, platformBreedte, 15);
   //platform2
-  image(imglongcloud, platform2X - 130, platform2Y -182, 400, 400); 
+  image(imglongcloud, platform2X - 130, platform2Y - 182, 400, 400);
   fill("black");
-  rect (platform2X, platform2Y, 140, 15);
+  rect(platform2X, platform2Y, platform2Breedte, 15);
 };
 
 /**
@@ -212,7 +213,7 @@ var tekenAlles = function() {
  */
 var checkGameOver = function() {
   // check of HP 0 is , of tijd op is, of ...
-  if (health <=0) {
+  if (health <= 0) {
     return true;
   }
   return false;
@@ -243,7 +244,7 @@ function draw() {
     if (keyIsDown(32)) {
       spelerX = 1075;
       speler2X = 200;
-      health= 50;
+      health = 50;
       spelStatus = SPELEN;
     }
   }
@@ -251,3 +252,5 @@ function draw() {
     console.log("uitleg");
   }
 }
+
+// laat j ehealth zien op het schemr
