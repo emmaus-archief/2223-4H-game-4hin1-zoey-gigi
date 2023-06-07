@@ -251,6 +251,3 @@ function draw() {
     console.log("uitleg");
   }
 }
-
-# hoe gameover weg te halen?
-  
