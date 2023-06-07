@@ -239,7 +239,7 @@ function draw() {
     if (keyIsDown(32)) {
       spelerX = 1075;
       speler2X = 200;
-      spelStatus = SPELEN;
+      spelStatus = 1;
     }
   }
   if (spelStatus === UITLEG) {
