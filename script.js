@@ -40,7 +40,7 @@ var speler2Y = 700; // y-positie van speler2
 var health = 50;
 
 var valkuilX = 660;
-var valkuilY = 635;
+var valkuilY = 665;
 
 var platformX = 380;
 var platformY = 660;
@@ -176,8 +176,8 @@ var verwerkBotsing = function() {
   // botsing speler tegen vijand
   if (spelerX - valkuilX < 40 &&
     spelerX - valkuilX > -40 &&
-    spelerY - valkuilY < 90 &&
-    spelerY - valkuilY > -90) {
+    spelerY - valkuilY < 60 &&
+    spelerY - valkuilY > -60) {
     aantal = aantal + 1
     console.log("Botsing1 " + aantal);
     health = health - 1;
@@ -185,8 +185,8 @@ var verwerkBotsing = function() {
   // botsing kogel tegen vijand
   if (speler2X - valkuilX < 40 &&
     speler2X - valkuilX > -40 &&
-    speler2Y - valkuilY < 90 &&
-    speler2Y - valkuilY > -90) {
+    speler2Y - valkuilY < 60 &&
+    speler2Y - valkuilY > -60) {
     aantal = aantal + 1
     console.log("Botsing2 " + aantal);
     health = health - 1;
@@ -210,7 +210,7 @@ var tekenAlles = function() {
   ellipse(spelerX, spelerY, 10, 10);
   //valkuil
   fill("red");
-  rect(valkuilX - 14, valkuilY - 10, 28, 100);
+  rect(valkuilX - 14, valkuilY - 50, 28, 100);
   fill("yellow");
   ellipse(valkuilX, valkuilY, 10, 10);
   // punten en health
