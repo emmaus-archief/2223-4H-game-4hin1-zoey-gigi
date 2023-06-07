@@ -130,7 +130,7 @@ if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte &&
   speler2Springt = false;
 }
 
- if (speler2Y + 10 >= platform2Y && speler2Y + 10 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
+ if (speler2Y + 1 >= platform2Y && speler2Y + 1 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
   speler2Y = platform2Y - 5;
   speler2Springt = false;
 } 
@@ -228,7 +228,7 @@ var checkGameOver = function() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  if (spelStatus === 1) {
+  if (spelStatus === SPELEN) {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
@@ -243,7 +243,8 @@ function draw() {
     if (keyIsDown(32)) {
       spelerX = 1075;
       speler2X = 200;
-      spelStatus = 1;
+      health= 50;
+      spelStatus = SPELEN;
     }
   }
   if (spelStatus === UITLEG) {
@@ -251,3 +252,5 @@ function draw() {
   }
 }
 
+# hoe gameover weg te halen?
+  
