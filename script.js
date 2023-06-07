@@ -98,8 +98,8 @@ if (spelerY + 10 >= platformY && spelerY + 10 <= platformY + platformHoogte && s
   spelerSpringt = false;
 }
 
-  if (spelerY + 10 >= platform2Y && spelerY + 10 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
-  spelerY = platform2Y - 10;
+  if (spelerY + 1 >= platform2Y && spelerY + 1 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
+  spelerY = platform2Y - 5;
   spelerSpringt = false;
 }
   
@@ -129,7 +129,11 @@ if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte &&
   speler2Y = platformY - 10;
   speler2Springt = false;
 }
-  
+
+ if (speler2Y + 10 >= platform2Y && speler2Y + 10 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
+  speler2Y = platform2Y - 5;
+  speler2Springt = false;
+} 
       if (speler2Springt === false &&
      keyIsDown(87)) {
     speler2Springt = true;
@@ -199,7 +203,7 @@ var tekenAlles = function() {
   //platform2
   image(imglongcloud, platform2X - 130, platform2Y -182, 400, 400); 
   fill("black");
-  rect (platform2X, platform2Y, 150, 15);
+  rect (platform2X, platform2Y, 140, 15);
 };
 
 /**
