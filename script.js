@@ -39,8 +39,11 @@ var speler2X = 200; // x-positie van speler2
 var speler2Y = 700; // y-positie van speler2
 var health = 10;
 
-var valkuilX = 660;
+var valkuilX = 655;
 var valkuilY = 665;
+
+var valkuil2X = 655;
+var valkuil2Y = 400;
 
 var platformX = 380;
 var platformY = 660;
@@ -76,6 +79,16 @@ var platform7X = 1050;
 var platform7Y = 600;
 var platform7Hoogte = 15;
 var platform7Breedte = 150;
+
+var platform8X = 552;
+var platform8Y = 450;
+var platform8Hoogte = 15;
+var platform8Breedte = 90;
+
+var platform9X = 672;
+var platform9Y = 450;
+var platform9Hoogte = 15;
+var platform9Breedte = 90;
 
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -123,41 +136,53 @@ var beweegAlles = function() {
     spelerY = platformY - 10;
     spelerSpringt = false;
   }
-  // speler landt op platform 2
+// speler landt op platform 2
   if (spelerY + 1 >= platform2Y && spelerY + 1 <= platform2Y + platform2Hoogte && spelerX >= platform2X && spelerX <= platform2X + platform2Breedte) {
     spelerY = platform2Y - 5;
     spelerSpringt = false;
   }
 
-    // speler landt op platform 3
+// speler landt op platform 3
   if (spelerY + 10 >= platform3Y && spelerY + 10 <= platform3Y + platform3Hoogte && spelerX >= platform3X && spelerX <= platform3X + platform3Breedte) {
     spelerY = platform3Y - 5;
     spelerSpringt = false;
   }
 
-      // speler landt op platform 4
+ // speler landt op platform 4
   if (spelerY + 1 >= platform4Y && spelerY + 10 <= platform4Y + platform4Hoogte && spelerX >= platform4X && spelerX <= platform4X + platform4Breedte) {
     spelerY = platform4Y - 5;
     spelerSpringt = false;
   }
 
-      // speler landt op platform 5
+ // speler landt op platform 5
   if (spelerY + 1 >= platform5Y && spelerY + 10 <= platform5Y + platform5Hoogte && spelerX >= platform5X && spelerX <= platform5X + platform5Breedte) {
     spelerY = platform5Y - 5;
     spelerSpringt = false;
   }
 
-        // speler landt op platform 6
+  // speler landt op platform 6
   if (spelerY + 1 >= platform6Y && spelerY + 10 <= platform6Y + platform6Hoogte && spelerX >= platform6X && spelerX <= platform6X + platform6Breedte) {
     spelerY = platform6Y - 5;
     spelerSpringt = false;
   }
 
-          // speler landt op platform 7
+// speler landt op platform 7
   if (spelerY + 1 >= platform7Y && spelerY + 10 <= platform7Y + platform7Hoogte && spelerX >= platform7X && spelerX <= platform7X + platform7Breedte) {
     spelerY = platform7Y - 5;
     spelerSpringt = false;
   }
+
+ // speler landt op platform 8
+  if (spelerY + 1 >= platform8Y && spelerY + 10 <= platform8Y + platform8Hoogte && spelerX >= platform8X && spelerX <= platform8X + platform8Breedte) {
+    spelerY = platform8Y - 5;
+    spelerSpringt = false;
+  }
+
+// speler landt op platform 9
+  if (spelerY + 1 >= platform9Y && spelerY + 10 <= platform9Y + platform9Hoogte && spelerX >= platform9X && spelerX <= platform9X + platform9Breedte) {
+    spelerY = platform9Y - 5;
+    spelerSpringt = false;
+  } 
 
   if (spelerSpringt === false &&
     keyIsDown(UP_ARROW)) {
@@ -283,6 +308,12 @@ var tekenAlles = function() {
   rect(valkuilX - 14, valkuilY - 50, 28, 100);
   fill("yellow");
   ellipse(valkuilX, valkuilY, 10, 10);
+
+    //valkuil 2
+  fill("red");
+  rect(valkuil2X - 14, valkuil2Y - 50, 28, 100);
+  fill("yellow");
+  ellipse(valkuil2X, valkuil2Y, 10, 10);
   
   // punten en health
   
@@ -322,6 +353,16 @@ var tekenAlles = function() {
   image(imglongcloud, platform7X - 130, platform7Y - 182, 400, 400);
   fill("black");
   rect(platform7X, platform7Y, platform7Breedte, 15);
+
+  //platform 8
+  image(imgcloud, platform8X - 96, platform8Y - 182, 400, 400);
+  fill("black");
+  rect(platform8X, platform8Y, platform8Breedte, 15);
+
+  //platform 9
+  image(imgcloud, platform9X - 96, platform9Y - 182, 400, 400);
+  fill("black");
+  rect(platform9X, platform9Y, platform9Breedte, 15);
 }
 
 /**
