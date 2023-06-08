@@ -1,23 +1,15 @@
-//test2
-/* Game opdracht
-   Informatica - Emmauscollege Rotterdam
-   Template voor een game in JavaScript met de p5 library
+// AnimalGo!
 
-   Begin met dit template voor je game opdracht,
-   voeg er je eigen code aan toe.
- */
-
-/*
- * instellingen om foutcontrole van je code beter te maken 
- */
 ///<reference path="p5.global-mode.d.ts" />
 "use strict"
 
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
+
 var aantal = 0;
 
+// images
 var imgP1;
 var imgP2;
 var imgGameover;
@@ -27,24 +19,29 @@ var imglongcloud;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 8;
-var spelStatus = SPELEN;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
 const UP_ARROW = 38;
 const DOWN_ARROW = 40;
 
+var spelStatus = SPELEN;
+
+// XY start van spelers
 var spelerX = 1075; // x-positie van speler
 var spelerY = 700; // y-positie van speler
 var speler2X = 200; // x-positie van speler2
 var speler2Y = 700; // y-positie van speler2
+
 var health = 10;
 
+// valkuilen
 var valkuilX = 655;
 var valkuilY = 665;
 
 var valkuil2X = 655;
 var valkuil2Y = 400;
 
+// platforms
 var platformX = 380;
 var platformY = 660;
 var platformHoogte = 15;
@@ -90,11 +87,13 @@ var platform9Y = 450;
 var platform9Hoogte = 15;
 var platform9Breedte = 90;
 
+// speler
 var spelerSpringt = false;
 var springSnelheid = 5;
 var springSnelheidStart = 5;
 var zwaartekracht = 0.2;
 
+// speler2
 var speler2Springt = false;
 var speler2SpringSnelheid = 5;
 var speler2SpringSnelheidStart = 5;
@@ -103,6 +102,7 @@ var speler2Zwaartekracht = 0.2;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
+
 function preload() {
   imgP1 = loadImage('bunny.png');
   imgP2 = loadImage('cat.png');
@@ -110,18 +110,13 @@ function preload() {
   imgcloud = loadImage('smallcloud.png');
   imglongcloud = loadImage('longcloud.png');
 }
-/**
- * setup
- * de code in deze functie wordt één keer uitgevoerd door
- * de p5 library, zodra het spel geladen is in de browser
- */
+
 function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 }
 
 /**
- * Updatet globale variabelen met posities van speler, vijanden en kogels
+ * posities/beweging van spelers
  */
 var beweegAlles = function() {
   // speler naar linsk of rechts
@@ -205,21 +200,25 @@ var beweegAlles = function() {
   if (keyIsDown(65)) {
     speler2X = speler2X - 3;
   }
+  
 //speler2 landt op platform1
   if (speler2Y + 10 >= platformY && speler2Y + 10 <= platformY + platformHoogte && speler2X >= platformX && speler2X <= platformX + platformBreedte) {
     speler2Y = platformY - 10;
     speler2Springt = false;
   }
+  
 //speler2 landt op platform 2
   if (speler2Y + 1 >= platform2Y && speler2Y + 1 <= platform2Y + platform2Hoogte && speler2X >= platform2X && speler2X <= platform2X + platform2Breedte) {
     speler2Y = platform2Y - 5;
     speler2Springt = false;
   }
+  
 //speler2 landt op platform 3
   if (speler2Y + 1 >= platform3Y && speler2Y + 1 <= platform3Y + platform3Hoogte && speler2X >= platform3X && speler2X <= platform3X + platform3Breedte) {
     speler2Y = platform3Y - 5;
     speler2Springt = false;
   }
+  
 //speler2 landt op platform 4
     if (speler2Y + 1 >= platform4Y && speler2Y + 1 <= platform4Y + platform4Hoogte && speler2X >= platform4X && speler2X <= platform4X + platform4Breedte) {
     speler2Y = platform4Y - 5;
@@ -232,13 +231,13 @@ var beweegAlles = function() {
     speler2Springt = false;
   }
 
-    //speler2 landt op platform 6
+  //speler2 landt op platform 6
     if (speler2Y + 1 >= platform6Y && speler2Y + 1 <= platform6Y + platform6Hoogte && speler2X >= platform6X && speler2X <= platform6X + platform6Breedte) {
     speler2Y = platform6Y - 5;
     speler2Springt = false;
   }
 
-      //speler2 landt op platform 7
+  //speler2 landt op platform 7
     if (speler2Y + 1 >= platform7Y && speler2Y + 1 <= platform7Y + platform7Hoogte && speler2X >= platform7X && speler2X <= platform7X + platform7Breedte) {
     speler2Y = platform7Y - 5;
     speler2Springt = false;
@@ -259,10 +258,9 @@ var beweegAlles = function() {
     speler2Springt = false;
   }
 };
+
 /**
  * Checkt botsingen
- * Verwijdert neergeschoten dingen
- * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
@@ -281,10 +279,9 @@ var verwerkBotsing = function() {
     speler2Y - valkuilY > -60) {
     aantal = aantal + 1
     console.log("Botsing2 " + aantal);
+    //health
     health = health - 1;
   }
-  // update punten en health
-
 };
 
 // Tekent spelscherm
@@ -309,13 +306,11 @@ var tekenAlles = function() {
   fill("yellow");
   ellipse(valkuilX, valkuilY, 10, 10);
 
-    //valkuil 2
+  //valkuil 2
   fill("red");
   rect(valkuil2X - 14, valkuil2Y - 50, 28, 100);
   fill("yellow");
   ellipse(valkuil2X, valkuil2Y, 10, 10);
-  
-  // punten en health
   
   //platform
   image(imgcloud, platformX - 96, platformY - 182, 400, 400);
@@ -342,7 +337,6 @@ var tekenAlles = function() {
   fill("black");
   rect(platform5X, platform5Y, platform5Breedte, 15);
 
-
   //platform6
   image(imglongcloud, platform6X - 130, platform6Y - 182, 400, 400);
   fill("black");
@@ -365,10 +359,6 @@ var tekenAlles = function() {
   rect(platform9X, platform9Y, platform9Breedte, 15);
 }
 
-/**
- * return true als het gameover is
- * anders return false
- */
 var checkGameOver = function() {
   // check of HP 0 is , of tijd op is, of ...
   if (health <= 0) {
@@ -381,11 +371,6 @@ var checkGameOver = function() {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 
-/**
- * draw
- * de code in deze functie wordt 50 keer per seconde
- * uitgevoerd door de p5 library, nadat de setup functie klaar is
- */
 function draw() {
   if (spelStatus === SPELEN) {
     beweegAlles();
@@ -412,5 +397,3 @@ function draw() {
     console.log("uitleg");
   }
 }
-
-// laat j ehealth zien op het schemr
