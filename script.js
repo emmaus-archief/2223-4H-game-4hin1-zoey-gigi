@@ -12,6 +12,8 @@ var aantal = 0;
 // images
 var imgP1;
 var imgP2;
+var imgWasd;
+var imgArrows;
 var imgGameover;
 var imgcloud;
 var imglongcloud;
@@ -106,6 +108,8 @@ var speler2Zwaartekracht = 0.2;
 function preload() {
   imgP1 = loadImage('bunny.png');
   imgP2 = loadImage('cat.png');
+  imgWasd = loadImage('wasd.png');
+  imgArrows = loadImage('arrows.png');
   imgGameover = loadImage('game-over.png');
   imgcloud = loadImage('smallcloud.png');
   imglongcloud = loadImage('longcloud.png');
@@ -116,8 +120,8 @@ function setup() {
 }
 
 /**
- * posities/beweging van spelers
- */
+ * posities/beweging van spelers */
+
 var beweegAlles = function() {
   // speler naar linsk of rechts
   if (keyIsDown(RIGHT_ARROW)) {
@@ -289,6 +293,12 @@ var tekenAlles = function() {
   // achtergrond
   fill("lightpink");
   rect(0, 0, 1280, 720);
+
+  // WASD
+  image(imgWasd, 130, 200,  180, 150);
+
+  // Arrows
+  image(imgArrows, 1030, 200, 200, 130);
   
   // speler 1
   image(imgP1, speler2X - 35, speler2Y - 80, 70, 90);
@@ -360,7 +370,6 @@ var tekenAlles = function() {
 }
 
 var checkGameOver = function() {
-  // check of HP 0 is , of tijd op is, of ...
   if (health <= 0) {
     return true;
   }
