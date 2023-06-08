@@ -401,7 +401,9 @@ function draw() {
     image(imgGameover, 280, 20, 700, 600);
     if (keyIsDown(32)) {
       spelerX = 1075;
+      spelerY = 700;
       speler2X = 200;
+      speler2Y = 700;
       health = 50;
       spelStatus = SPELEN;
     }
