@@ -80,12 +80,12 @@ var platform7Hoogte = 15;
 var platform7Breedte = 150;
 
 var platform8X = 552;
-var platform8Y = 450;
+var platform8Y = 455;
 var platform8Hoogte = 15;
 var platform8Breedte = 90;
 
-var platform9X = 672;
-var platform9Y = 450;
+var platform9X = 675;
+var platform9Y = 455;
 var platform9Hoogte = 15;
 var platform9Breedte = 90;
 
@@ -171,17 +171,19 @@ var beweegAlles = function() {
     spelerSpringt = false;
   }
 
- // speler landt op platform 8
-  if (spelerY + 1 >= platform8Y && spelerY + 10 <= platform8Y + platform8Hoogte && spelerX >= platform8X && spelerX <= platform8X + platform8Breedte) {
+  // speler landt op platform 8
+  if (spelerY + 1 >= platform8Y && spelerY + 1 <= platform8Y + platform8Hoogte && spelerX >= platform8X && spelerX <= platform8X + platform8Breedte) {
     spelerY = platform8Y - 5;
     spelerSpringt = false;
   }
 
-// speler landt op platform 9
-  if (spelerY + 1 >= platform9Y && spelerY + 10 <= platform9Y + platform9Hoogte && spelerX >= platform9X && spelerX <= platform9X + platform9Breedte) {
+  // speler landt op platform 9
+  if (spelerY + 1 >= platform9Y && spelerY + 1 <= platform9Y + platform9Hoogte && spelerX >= platform9X && spelerX <= platform9X + platform9Breedte) {
     spelerY = platform9Y - 5;
     spelerSpringt = false;
-  } 
+  }
+
+
 
   if (spelerSpringt === false &&
     keyIsDown(UP_ARROW)) {
@@ -246,6 +248,18 @@ var beweegAlles = function() {
     speler2Y = platform7Y - 5;
     speler2Springt = false;
   }
+
+  //speler2 landt op platform 8
+    if (speler2Y + 1 >= platform8Y && speler2Y + 1 <= platform8Y + platform8Hoogte && speler2X >= platform8X && speler2X <= platform8X + platform8Breedte) {
+    speler2Y = platform8Y - 5;
+    speler2Springt = false;
+  }
+
+    //speler2 landt op platform 9
+    if (speler2Y + 1 >= platform9Y && speler2Y + 1 <= platform9Y + platform9Hoogte && speler2X >= platform9X && speler2X <= platform9X + platform9Breedte) {
+    speler2Y = platform9Y - 5;
+    speler2Springt = false;
+  }
   
   if (speler2Springt === false &&
     keyIsDown(87)) {
@@ -274,7 +288,7 @@ var verwerkBotsing = function() {
     spelerY - valkuilY > -60) {
     aantal = aantal + 1
     console.log("Botsing1 " + aantal);
-    health = health - 1;
+    health = health - 5;
   }
   // botsing kogel tegen vijand
   if (speler2X - valkuilX < 40 &&
@@ -284,7 +298,25 @@ var verwerkBotsing = function() {
     aantal = aantal + 1
     console.log("Botsing2 " + aantal);
     //health
-    health = health - 1;
+    health = health - 5;
+  }
+  //botsing valkuil2
+    if (spelerX - valkuil2X < 40 &&
+    spelerX - valkuil2X > -40 &&
+    spelerY - valkuil2Y < 60 &&
+    spelerY - valkuil2Y > -60) {
+    aantal = aantal + 1
+    console.log("Botsing3 " + aantal);
+    health = health - 5;
+  }
+    //botsing valkuil2
+    if (speler2X - valkuil2X < 40 &&
+    speler2X - valkuil2X > -40 &&
+    speler2Y - valkuil2Y < 60 &&
+    speler2Y - valkuil2Y > -60) {
+    aantal = aantal + 1
+    console.log("Botsing4 " + aantal);
+    health = health - 5;
   }
 };
 
