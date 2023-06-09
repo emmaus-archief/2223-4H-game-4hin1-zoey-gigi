@@ -324,19 +324,23 @@ var verwerkBotsing = function() {
   }
 };
 
-// Tekent spelscherm
+// Tekent speelscherm
 var tekenAlles = function() {
   // achtergrond
   fill("lightpink");
   rect(0, 0, 1280, 720);
 
-  // WASD
+  //WASD
   image(imgWasd, 130, 200,  180, 150);
 
-  // Arrows
+  //Arrows
   image(imgArrows, 1030, 200, 200, 130);
+
+  //doors
+  image(imgDoorFish, 550, 350, 80, 120);
+  image(imgDoorCarrot, 680, 340, 90, 140);
   
-  // speler 1
+  //speler 1
   image(imgP1, speler2X - 35, speler2Y - 80, 70, 90);
   fill("black");
   ellipse(speler2X, speler2Y, 10, 10);
@@ -357,10 +361,6 @@ var tekenAlles = function() {
   rect(valkuil2X - 14, valkuil2Y - 50, 28, 100);
   fill("yellow");
   ellipse(valkuil2X, valkuil2Y, 10, 10);
-
-  //doors
-  image(imgDoorFish, 550, 350, 80, 120);
-  image(imgDoorCarrot, 680, 340, 90, 140);
   
   //platform
   image(imgcloud, platformX - 96, platformY - 182, 400, 400);
