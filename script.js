@@ -15,6 +15,8 @@ var imgP2;
 var imgWasd;
 var imgArrows;
 var imgGameover;
+var imgDoorCarrot;
+var imgDoorFish;
 var imgcloud;
 var imglongcloud;
 
@@ -111,6 +113,8 @@ function preload() {
   imgWasd = loadImage('wasd.png');
   imgArrows = loadImage('arrows.png');
   imgGameover = loadImage('game-over.png');
+  imgDoorCarrot = loadImage('doorCarrot.png');
+  imgDoorFish = loadImage('doorFish.png');
   imgcloud = loadImage('smallcloud.png');
   imglongcloud = loadImage('longcloud.png');
 }
@@ -353,6 +357,10 @@ var tekenAlles = function() {
   rect(valkuil2X - 14, valkuil2Y - 50, 28, 100);
   fill("yellow");
   ellipse(valkuil2X, valkuil2Y, 10, 10);
+
+  //doors
+  image(imgDoorFish, 550, 350, 80, 120);
+  image(imgDoorCarrot, 680, 340, 90, 140);
   
   //platform
   image(imgcloud, platformX - 96, platformY - 182, 400, 400);
