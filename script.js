@@ -19,6 +19,7 @@ var imgDoorCarrot;
 var imgDoorFish;
 var imgcloud;
 var imglongcloud;
+var imgFish;
 
 const SPELEN = 1;
 const GAMEOVER = 2;
@@ -91,6 +92,10 @@ var platform9Y = 455;
 var platform9Hoogte = 15;
 var platform9Breedte = 90;
 
+//collect
+var fishX = 225;
+var fishY = 590;
+
 // speler
 var spelerSpringt = false;
 var springSnelheid = 5;
@@ -117,6 +122,7 @@ function preload() {
   imgDoorFish = loadImage('doorFish.png');
   imgcloud = loadImage('smallcloud.png');
   imglongcloud = loadImage('longcloud.png');
+  imgFish = loadImage('fish.png');
 }
 
 function setup() {
@@ -349,6 +355,11 @@ var tekenAlles = function() {
   image(imgP2, spelerX - 30, spelerY - 75, 60, 80);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
+
+  //fish
+  image(imgFish, fishX + 10, fishY + 20, 800, 800);
+  fill("black");
+  ellipse(fishX, fishY, 10, 10);
   
   //valkuil
   fill("red");
