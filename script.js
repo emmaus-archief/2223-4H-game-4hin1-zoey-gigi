@@ -92,6 +92,14 @@ var platform9Y = 455;
 var platform9Hoogte = 15;
 var platform9Breedte = 90;
 
+var timer = 30;
+
+var doorFishX = 550;
+var doorFishY = 350;
+var doorCarrotX = 680;
+var doorCarrotY = 340;  
+
+
 //collect
 var fishX = 225;
 var fishY = 590;
@@ -132,7 +140,9 @@ function setup() {
 /**
  * posities/beweging van spelers */
 
-
+var timer = function() {
+  timer = (timer * 1000) - 1;
+}
 
 var beweegAlles = function() {
   // speler naar linsk of rechts
@@ -346,6 +356,8 @@ var tekenAlles = function() {
 
   //doors
   image(imgDoorFish, 550, 350, 80, 120);
+  fill("black");
+  ellipse(10, 10, 10, 10);
   image(imgDoorCarrot, 680, 340, 90, 140);
   
   //speler 1
@@ -358,6 +370,9 @@ var tekenAlles = function() {
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
 
+  //timer 
+  
+  
   //fish
   image(imgFish, fishX + 10, fishY + 20, 800, 800);
   fill("black");
@@ -454,9 +469,5 @@ function draw() {
       health = 50;
       spelStatus = SPELEN;
     }
-  }
-  
-  if (spelStatus === UITLEG) {
-    console.log("uitleg");
   }
 }
