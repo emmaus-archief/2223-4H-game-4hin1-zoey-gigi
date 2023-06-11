@@ -15,15 +15,16 @@ var imgP2;
 var imgWasd;
 var imgArrows;
 var imgGameover;
+var imgWin;
 var imgDoorCarrot;
 var imgDoorFish;
 var imgcloud;
 var imglongcloud;
-var imgFish;
+var imgCarrot;
 
 const SPELEN = 1;
 const GAMEOVER = 2;
-const UITLEG = 8;
+const WIN = 3;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
 const UP_ARROW = 38;
@@ -101,8 +102,8 @@ var doorCarrotY = 400;
 
 
 //collect
-var fishX = 225;
-var fishY = 590;
+var carrotX = 225;
+var carrotY = 590;
 
 // speler
 var spelerSpringt = false;
@@ -126,11 +127,12 @@ function preload() {
   imgWasd = loadImage('wasd.png');
   imgArrows = loadImage('arrows.png');
   imgGameover = loadImage('game-over.png');
+  imgWin = loadImage('win.png');
   imgDoorCarrot = loadImage('doorCarrot.png');
   imgDoorFish = loadImage('doorFish.png');
   imgcloud = loadImage('smallcloud.png');
   imglongcloud = loadImage('longcloud.png');
-  imgFish = loadImage('fish.png');
+  imgCarrot = loadImage('carrot.png');
 }
 
 function setup() {
@@ -204,8 +206,6 @@ var beweegAlles = function() {
     spelerY = platform9Y - 5;
     spelerSpringt = false;
   }
-
-
 
   if (spelerSpringt === false &&
     keyIsDown(UP_ARROW)) {
@@ -370,15 +370,7 @@ var tekenAlles = function() {
   image(imgP2, spelerX - 30, spelerY - 75, 60, 80);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
-
-  //timer 
-  
-  
-  //fish
-  image(imgFish, fishX + 10, fishY + 20, 800, 800);
-  fill("black");
-  ellipse(fishX, fishY, 10, 10);
-  
+ 
   //valkuil
   fill("red");
   rect(valkuilX - 14, valkuilY - 50, 28, 100);
@@ -445,6 +437,16 @@ var checkGameOver = function() {
   return false;
 };
 
+var checkWin = function() {
+  if (spelerX - doorFishX < 40 &&
+    spelerX - doorFishX > -40 &&
+    spelerY - doorFishY < 60 &&
+    spelerY - doorFishY > -60) {
+    return true;
+  }
+  return false;
+};
+
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
@@ -457,9 +459,12 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
+    if (checkWin()) {
+      spelStatus = WIN;
+    }
   }
+  
   if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
     console.log("game over");
     image(imgGameover, 280, 20, 700, 600);
     if (keyIsDown(32)) {
@@ -471,4 +476,16 @@ function draw() {
       spelStatus = SPELEN;
     }
   }
+  if (spelStatus === WIN) {
+    console.log("win");
+    image(imgWin, 290, 30, 800, 600);
+    if (keyIsDown(32)) {
+      spelerX = 1075;
+      spelerY = 700;
+      speler2X = 200;
+      speler2Y = 700;
+      health = 50;
+      spelStatus = SPELEN;
+  }
+}
 }
