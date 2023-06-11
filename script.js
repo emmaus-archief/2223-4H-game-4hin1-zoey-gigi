@@ -92,6 +92,9 @@ var platform9Y = 455;
 var platform9Hoogte = 15;
 var platform9Breedte = 90;
 
+var startTijd;
+var countdownTijd = 30;
+
 //collect
 var fishX = 225;
 var fishY = 590;
@@ -127,10 +130,25 @@ function preload() {
 
 function setup() {
   createCanvas(1280, 720);
+
+  startTijd();
 }
 
 /**
  * posities/beweging van spelers */
+
+function startTijd () {
+  startTijd = millis();
+}
+
+function getRemainingTijd() {
+  var elapsed = millis() - startTijd;
+  var remaining = countdownTijd * 1000 - elapsed;
+
+
+var seconds = ceil(remaining / 1000);
+return seconds;
+}
 
 var beweegAlles = function() {
   // speler naar linsk of rechts
@@ -453,6 +471,19 @@ function draw() {
       spelStatus = SPELEN;
     }
   }
+
+if (spelStatus === SPELEN) {
+  var currentTijd = getRemainingTijd();
+  fill(255);
+  textSize(24);
+  textAlign(CENTER, CENTER);
+  text("Tijd:" + currentTijd, width / 2, 50);
+
+  if(currentTijd <= 0) {
+    spelStatus = GAMEOVER;
+  }
+}
+  
   if (spelStatus === UITLEG) {
     console.log("uitleg");
   }
