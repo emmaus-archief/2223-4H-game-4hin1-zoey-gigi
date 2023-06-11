@@ -441,7 +441,11 @@ var checkWin = function() {
   if (spelerX - doorFishX < 40 &&
     spelerX - doorFishX > -40 &&
     spelerY - doorFishY < 60 &&
-    spelerY - doorFishY > -60) {
+    spelerY - doorFishY > -60 && 
+    speler2X - doorCarrotX < 40 &&
+    speler2X - doorCarrotX > -40 &&
+    speler2Y - doorCarrotY < 60 &&
+    speler2Y - doorCarrotY > -60) {
     return true;
   }
   return false;
