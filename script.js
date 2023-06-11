@@ -356,78 +356,48 @@ var tekenAlles = function() {
 
   //doors
   image(imgDoorFish, doorFishX -40, doorFishY -60, 80, 120);
-  fill("black");
-  ellipse(doorFishX, doorFishY, 10, 10);
   image(imgDoorCarrot, doorCarrotX -45, doorCarrotY -65, 90, 140);
-  ellipse(doorCarrotX, doorCarrotY, 10, 10);
   
   //speler 1
   image(imgP1, speler2X - 35, speler2Y - 80, 70, 90);
-  fill("black");
-  ellipse(speler2X, speler2Y, 10, 10);
   
   //speler 2
   image(imgP2, spelerX - 30, spelerY - 75, 60, 80);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
  
   //valkuil
   fill("red");
   rect(valkuilX - 14, valkuilY - 50, 28, 100);
-  fill("yellow");
-  ellipse(valkuilX, valkuilY, 10, 10);
 
   //valkuil 2
   fill("red");
   rect(valkuil2X - 14, valkuil2Y - 50, 28, 100);
-  fill("yellow");
-  ellipse(valkuil2X, valkuil2Y, 10, 10);
   
-  //platform
+  //platform1
   image(imgcloud, platformX - 96, platformY - 182, 400, 400);
-  fill("black");
-  rect(platformX, platformY, platformBreedte, 15);
   
   //platform2
   image(imglongcloud, platform2X - 130, platform2Y - 182, 400, 400);
-  fill("black");
-  rect(platform2X, platform2Y, platform2Breedte, 15);
   
   //platform3
   image(imgcloud, platform3X - 96, platform3Y - 182, 400, 400);
-  fill("black");
-  rect(platform3X, platform3Y, platform3Breedte, 15);
   
   //platform4
   image(imglongcloud, platform4X - 130, platform4Y - 182, 400, 400);
-  fill("black");
-  rect(platform4X, platform4Y, platform4Breedte, 15);
   
   //platform5
   image(imglongcloud, platform5X - 130, platform5Y - 182, 400, 400);
-  fill("black");
-  rect(platform5X, platform5Y, platform5Breedte, 15);
 
   //platform6
   image(imglongcloud, platform6X - 130, platform6Y - 182, 400, 400);
-  fill("black");
-  rect(platform6X, platform6Y, platform6Breedte, 15);
-
 
   //platform7
   image(imglongcloud, platform7X - 130, platform7Y - 182, 400, 400);
-  fill("black");
-  rect(platform7X, platform7Y, platform7Breedte, 15);
 
   //platform 8
   image(imgcloud, platform8X - 96, platform8Y - 182, 400, 400);
-  fill("black");
-  rect(platform8X, platform8Y, platform8Breedte, 15);
 
   //platform 9
   image(imgcloud, platform9X - 96, platform9Y - 182, 400, 400);
-  fill("black");
-  rect(platform9X, platform9Y, platform9Breedte, 15);
 }
 
 var checkGameOver = function() {
