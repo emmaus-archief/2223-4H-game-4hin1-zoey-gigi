@@ -94,10 +94,10 @@ var platform9Breedte = 90;
 
 var timer = 30;
 
-var doorFishX = 550;
-var doorFishY = 350;
-var doorCarrotX = 680;
-var doorCarrotY = 340;  
+var doorFishX = 600;
+var doorFishY = 400;
+var doorCarrotX = 720;
+var doorCarrotY = 400;  
 
 
 //collect
@@ -355,10 +355,11 @@ var tekenAlles = function() {
   image(imgArrows, 1030, 200, 200, 130);
 
   //doors
-  image(imgDoorFish, 550, 350, 80, 120);
+  image(imgDoorFish, doorFishX -40, doorFishY -60, 80, 120);
   fill("black");
-  ellipse(10, 10, 10, 10);
-  image(imgDoorCarrot, 680, 340, 90, 140);
+  ellipse(doorFishX, doorFishY, 10, 10);
+  image(imgDoorCarrot, doorCarrotX -45, doorCarrotY -65, 90, 140);
+  ellipse(doorCarrotX, doorCarrotY, 10, 10);
   
   //speler 1
   image(imgP1, speler2X - 35, speler2Y - 80, 70, 90);
