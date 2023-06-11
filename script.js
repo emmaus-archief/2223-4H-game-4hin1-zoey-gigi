@@ -344,9 +344,14 @@ var verwerkBotsing = function() {
 
 // Tekent speelscherm
 var tekenAlles = function() {
-  // achtergrond
+  //achtergrond
   fill("lightpink");
   rect(0, 0, 1280, 720);
+
+  //text instructies
+  fill("white");
+  text("Don't touch the red, go to the door to win", 225, 100);
+  textSize(50);
 
   //WASD
   image(imgWasd, 130, 200,  180, 150);
